@@ -57,26 +57,4 @@ RSpec.describe GameQuestion, type: :model do
       end
     end
   end
-
-  describe '.add_fifty_fifty' do
-    context 'when fifty-fifty has not been used before' do
-      before do
-        expect(game_question.help_hash).not_to include(:fifty_fifty)
-
-        game_question.add_fifty_fifty
-      end
-
-      it 'add fifty-fifty help to .help_hash' do
-        expect(game_question.help_hash).to include(:fifty_fifty)
-      end
-
-      it 'add fifty-fifty help has 2 keys' do
-        expect(game_question.help_hash[:fifty_fifty].size).to eq 2
-      end
-
-      it 'add fifty-fifty help with correct answer key' do
-        expect(game_question.help_hash[:fifty_fifty]).to include(game_question.correct_answer_key)
-      end
-    end
-  end
 end
