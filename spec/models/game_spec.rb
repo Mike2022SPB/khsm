@@ -193,7 +193,7 @@ RSpec.describe Game, type: :model do
 
       context 'when answer is given after the time has expired' do
         let!(:game_w_questions) { FactoryBot.create(:game_with_questions, user: user, current_level: 3, created_at: 1
-                                                                                                                      .hour.ago) }
+
         it 'return false' do
           expect(game_w_questions.answer_current_question!(answer_key)).to be false
         end
