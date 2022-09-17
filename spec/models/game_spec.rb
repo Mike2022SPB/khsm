@@ -139,13 +139,13 @@ RSpec.describe Game, type: :model do
     end
   end
 
-  context '.current_game_question' do
+  describe '#current_game_question' do
     it 'return current game question' do
       expect(game_w_questions.current_game_question).to eq(game_w_questions.game_questions.first)
     end
   end
 
-  describe '.answer_current_question!' do
+  describe '#answer_current_question!' do
     before do
       game_w_questions.answer_current_question!(answer_key)
     end
